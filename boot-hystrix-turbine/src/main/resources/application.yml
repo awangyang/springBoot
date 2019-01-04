@@ -1,0 +1,16 @@
+server: 
+  port: 91
+
+
+
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/
+
+turbine: 
+  app-config: provider-service   # 指定要监控的应用名称
+
+spring: 
+  application: 
+    name: turbine

@@ -1,0 +1,21 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: boot-zuul
+
+eureka:
+  instance:
+    instance-id: boot-zuul:9001 #客户端实例名称
+    prefer-ip-address: true #显示IP
+  client: 
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/
+
+zuul:
+  prefix: /
+  ignored-services: "*"
+  routes:
+    studentServer.serviceId: provider-service
+    studentServer.path: /index/**
